@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIFTMASTER</title>
+  <link rel="stylesheet" href="/styles.css?v=4" />
+</head>
+
+<body>
+  <main class="layout">
+    <section class="building" aria-label="Building elevator simulation">
+      <h1>LIFTMASTER</h1>
+      <div class="simulation-grid">
+        <div id="floor-controls" class="floor-controls" aria-label="Floor call controls"></div>
+        <div class="shaft" aria-label="Elevator shaft">
+          <div id="elevator-car" class="elevator-car" aria-live="polite">
+            <div class="stick-person" aria-hidden="true">
+              <div class="head"></div>
+              <div class="torso"></div>
+              <div class="arms"></div>
+              <div class="legs"></div>
+            </div>
+            <span class="car-label">Lift</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel" aria-label="Elevator control panel">
+      <section class="controls-section" aria-label="Cabin controls section">
+        <h2>Cabin Controls</h2>
+        <div id="cabin-controls" class="cabin-controls"></div>
+      </section>
+
+      <div class="game-panel">
+        <h3>Game Mode</h3>
+        <button id="game-toggle" type="button">Start Game</button>
+        <p>Mode: <span id="mode">Simulation</span></p>
+        <p id="game-objective" class="game-objective">Start Game to play: the lift drops from 10 to Ground
+          automatically. Use cabin controls to schedule stops and collect waiting people.</p>
+
+        <div class="game-stats-grid" aria-label="Game stats">
+          <p>Level <span id="level">-</span></p>
+          <p>Score <span id="score">-</span></p>
+          <p>Time <span id="time-left">-</span></p>
+          <p>Waiting <span id="waiting-count">-</span></p>
+          <p>Planned Stops <span id="in-lift-count">-</span></p>
+        </div>
+
+        <p id="lift-manifest" class="lift-manifest">Current run: -</p>
+        <div class="game-feed" aria-live="polite" aria-label="Game event feed">
+          <p id="game-feedback">No events yet.</p>
+        </div>
+        <p class="game-hint">Game controls: cabin panel only. Floor buttons become request displays.</p>
+      </div>
+
+      <div class="status">
+        <h3>Status</h3>
+        <p>Current Floor: <span id="current-floor">1</span></p>
+        <p>State: <span id="state">idle</span></p>
+        <p>Direction: <span id="direction">idle</span></p>
+        <p>Queue Count: <span id="queue-count">0</span></p>
+      </div>
+    </aside>
+  </main>
+
+  <script type="module" src="/app.js?v=4"></script>
+</body>
+
+</html>
